@@ -1,0 +1,39 @@
+package com.cs126.android.messengingapp;
+
+import java.util.Date;
+
+/**
+ * Created by Tiger on 5/1/17.
+ */
+
+public class ChatMessage {
+    private String message;
+    private String author;
+    private long messageTime;
+
+    // Required default constructor for Firebase object mapping
+    @SuppressWarnings("unused")
+    private ChatMessage() {
+    }
+
+    ChatMessage(String message, String author) {
+        this.message = message;
+        this.author = author;
+
+        // Initialize to current time
+        messageTime = new Date().getTime();
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public long getMessageTime() {
+        return messageTime;
+    }
+
+}
